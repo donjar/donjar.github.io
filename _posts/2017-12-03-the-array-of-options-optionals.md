@@ -109,17 +109,6 @@ one element (for `Some`), or zero elements (for `None`)!
 Most languages also implement `flat_map` to expand these Option types. Going
 back to the string parsing example, we have these working solutions:
 
-### Swift Solution
-```swift
-func parse(input: String) -> [Int] {
-  return input.split(separator: " ").flatMap { Int($0) }
-}
-```
-
-Nothing special over here. Note that we are using the `Int` constructor here,
-which actually returns `Int?` (the option type for integers). In Swift, this is
-called "failable constructors" - constructors that can fail.
-
 ### Scala Solution
 ```scala
 import scala.util.Try
@@ -139,6 +128,22 @@ fn parse(input: &str) -> Vec<i32> {
 
 Notice that in Rust, we use the special function `filter_map` instead. (Took me
 two hours to figure this out ugh)
+
+### Swift Solution
+```swift
+func parse(input: String) -> [Int] {
+  return input.split(separator: " ").compactMap { Int($0) }
+}
+```
+
+UPDATE: in Swift 4.1 the method `compactMap` is used to differentiate it with
+`flatMap`, which is now exclusively used as a map operation composed with a
+flatten operation. This is similar with Rust above where `filter_map` v.s.
+`flat_map` is used.
+
+Note that we are using the `Int` constructor here, which actually returns `Int?`
+(the option type for integers). In Swift, this is called "failable constructors"
+- constructors that can fail.
 
 ## Afterthoughts
 I first saw this problem when I was doing my internship in Twitter. Basically,
