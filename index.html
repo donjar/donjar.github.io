@@ -1,0 +1,28 @@
+---
+layout: default
+title: Welcome!
+---
+<p>
+  I am <strong>Herbert Ilhan Tanujaya</strong>, currently studying Computer Science and Pure Mathematics at the <a href="https://nus.edu.sg">National University of Singapore</a>.
+</p>
+
+<p>
+  You can contact me at <a href="mailto:mail@herbert.id">mail@herbert.id</a> -- happy to talk about anything!
+</p>
+
+<p>
+  Here's my <a href="https://github.com/donjar/Awesome-CV/raw/master/resume.pdf">resume</a>. And my <a href="https://github.com/donjar">GitHub</a>. And my <a href="https://www.linkedin.com/in/herbert-ilhan-tanujaya-0ba1b5109">LinkedIn</a>.
+</p>
+
+<h2>Blog</h2>
+
+<a href="/feed.xml"><img src="/images/feed.svg" class="rss-img" alt="RSS"></a>
+{% for post in site.posts %}
+  <div><a href={{ post.url }} class="h3 blog-index-title">{{ post.title }}</a></div>
+  <div>
+    <div class="blog-index-date">{{ post.date | date: "%d %b %Y" }}</div>
+    <div class="tags">
+      {% for tag in post.categories %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+  </div>
+{% endfor %}

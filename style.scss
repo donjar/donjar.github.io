@@ -2,6 +2,7 @@
 ---
 
 $bg-color: #f8f8fe;
+$inner-color: #fafafa;
 $hover-color: #f0f0ff;
 $link-color: #273bc2;
 $link-hover-color: #121e87;
@@ -35,19 +36,6 @@ a {
   }
 }
 
-.navbar {
-  background-color: #fff;
-  border-radius: 0;
-  margin-left: -2em;
-  margin-right: -2em;
-  margin-top: -2em;
-}
-
-.navbar-toggle {
-  height: 34px;
-  padding: 7px 10px;
-}
-
 @media(min-width: 768px) {
   .outer-container {
     margin: 0 1em;
@@ -55,7 +43,7 @@ a {
 }
 
 .inner-container {
-  background-color: #fff;
+  background-color: $inner-color;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
   padding: 2em;
   margin: 0 auto;
