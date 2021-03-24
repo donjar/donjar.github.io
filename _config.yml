@@ -3,11 +3,6 @@ author: Herbert Ilhan Tanujaya
 
 # Build settings
 markdown: kramdown
-collections:
-  - experience
-  - projects
-plugins:
-  - jekyll-feed
 exclude:
   - CNAME
   - Gemfile
